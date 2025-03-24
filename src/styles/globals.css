@@ -44,6 +44,39 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
+
+  --duration: 10s; /* Default animation duration */
+  --gap: 1rem; /* Default gap between elements */
+}
+
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+.marquee {
+  display: flex;
+  animation: marquee var(--duration) linear infinite;
+}
+
+.marquee-vertical {
+  display: flex;
+  flex-direction: column;
+  animation: marquee-vertical var(--duration) linear infinite;
 }
 
 @theme inline {
