@@ -21,30 +21,28 @@ const navItems = [
     name: "Coaches",
     link: "/coaches-group/marathons",
   },
-  {
-    name: "Training & Workout",
-    link: "/training-workout",
-  },
-  {
-    name: "Communities",
-    link: "/communities",
-  },
-  {
-    name: "About Us",
-    link: "/about-us",
-  },
+  // {
+  //   name: "Training & Workout",
+  //   link: "/training-workout",
+  // },
+  // {
+  //   name: "Communities",
+  //   link: "/communities",
+  // },
+  // {
+  //   name: "About Us",
+  //   link: "/about-us",
+  // },
 ];
 
 export default function Component() {
   return (
     <header className="flex z-50 justify-between relative h-24 w-full shrink-0 items-center">
-      <Link
-        href="/"
-        className="mr-6 flex items-center"
-        prefetch={false}
-      >
+      <Link href="/" className="mr-6 flex items-center" prefetch={false}>
         <Image src="/logo.svg" width={70} height={70} alt="logo" />
-        <span className="md:grid hidden text-3xl font-bold">Track Your Race</span>
+        <span className="md:grid hidden text-3xl font-bold">
+          Track Your Race
+        </span>
       </Link>
       <Sheet>
         <SheetTrigger asChild>
@@ -80,7 +78,9 @@ export default function Component() {
             {item.name}
           </Link>
         ))}
-        <Button variant="outline">Contact</Button>
+        <Link href="/contact-us" prefetch={false}>
+          <Button variant="outline">Contact</Button>
+        </Link>
       </nav>
     </header>
   );
