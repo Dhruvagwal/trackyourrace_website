@@ -1,113 +1,121 @@
+import EventCard, { IEvent } from "@/components/main/event-card";
+import Navbar from "@/components/main/navbar";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const MARATHON: IEvent[] = [
+  {
+    date: "August 10, 2022",
+    location: "New York, USA",
+    title: "Full Marathon",
+    id: "1",
+    image:
+      "https://plus.unsplash.com/premium_photo-1664304814099-adb3a3255e7a?q=80&w=2606&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    date: "July 15, 2022",
+    location: "Los Angeles, USA",
+    title: "Half Marathon",
+    id: "2",
+    image:
+      "https://plus.unsplash.com/premium_photo-1664304814099-adb3a3255e7a?q=80&w=2606&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    date: "June 20, 2022",
+    location: "Chicago, USA",
+    title: "3/4 Marathon",
+    id: "3",
+    image:
+      "https://plus.unsplash.com/premium_photo-1664304814099-adb3a3255e7a?q=80&w=2606&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    date: "May 10, 2022",
+    location: "Boston, USA",
+    title: "1/2 Marathon",
+    id: "4",
+    image:
+      "https://plus.unsplash.com/premium_photo-1664304814099-adb3a3255e7a?q=80&w=2606&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
+const Carosel = ({ title, data }: { title: string; data?: IEvent[] }) => {
+  return (
+    <div className="relative mt-12 z-1">
+      <div className="flex justify-between items-center">
+        <p className="text-xl">{title}</p>
+        <Button size="lg" variant="link">
+          View All
+        </Button>
+      </div>
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+      <Carousel className="mt-4">
+        <CarouselContent>
+          {data?.map((item, index) => (
+            <CarouselItem
+              className="basis-1/1 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+              key={index}
+            >
+              <EventCard {...item} title="Full Marathon" />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </div>
+  );
+};
+const Orb = () => (
+  <div className="blur-[200px] absolute top-[-12rem] right-[-12rem] bg-primary h-96 w-96 rounded-full" />
+);
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="px-main relative max-md:px-main-md">
+      <Navbar />
+      {/* orb */}
+      <Orb />
+      <div className="z-1 mt-12 relative">
+        <h1 className="text-7xl font-medium md:w-[60%] max-md:text-3xl">
+          Find, Train, and Compete in Events Around the World
+        </h1>
+        <div className="mt-10 relative flex flex-col-reverse gap-4 text-white/80 w-full">
+          <div className="bg-secondary z-1 md:absolute top-0 right-0 max-md:w-full w-[45vw] p-9 rounded-xl md:rounded-4xl">
+            <p className="text-2xl">
+              From running races and triathlons to OCR, cycling, and functional
+              fitness challenges, access everything you need to conquer your
+              next goal.
+            </p>
+            <div className="mt-4 flex-wrap flex gap-4 items-center">
+              <Button size="lg">Find Your Next Event</Button>
+              <Button size="lg" variant="outline">
+                View Result
+              </Button>
+              <Button size="lg" variant="outline">
+                Hire a Coach
+              </Button>
+            </div>
+          </div>
+          <Image
+            width={1000}
+            height={500}
+            className="hero-mask object-cover overflow-clip h-[50vw] w-full"
+            alt="people running in marathon"
+            src="https://plus.unsplash.com/premium_photo-1664304814099-adb3a3255e7a?q=80&w=2606&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="mt-12 relative">
+          <div className="blur-[200px] absolute top-0 left-[-12rem] bg-primary h-96 w-96 rounded-full" />
+          <p className="text-5xl max-md:text-3xl">Explore popular events</p>
+          <Carosel title={"Marathons Events"} data={MARATHON} />
+          <Carosel title={"Marathons Events"} data={MARATHON} />
+        </div>
+      </div>
     </div>
   );
 }
