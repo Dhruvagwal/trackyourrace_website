@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import Link from "next/link";
 import CoachCard, { IGYMCoaches } from "@/components/main/coach-card";
+import TopScroller from "@/registry/toTop";
 
 export const MARATHON: IEvent[] = [
   {
@@ -106,6 +107,7 @@ export const Carosel = ({
 }) => {
   return (
     <div className="relative mt-12 z-1">
+      <TopScroller/>
       <div className="flex justify-between items-center">
         <p className="text-xl">{title}</p>
         <Link href="/events-group/maratho">

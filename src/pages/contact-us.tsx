@@ -1,10 +1,12 @@
 import React from "react";
 import Navbar from "@/components/main/navbar";
 import Image from "next/image";
+import TopScroller from "@/registry/toTop";
 function ContactUs() {
   return (
     <div className="px-main relative max-md:px-main-md">
       <Navbar />
+      <TopScroller/>
       {/* orb */}
       <div className="blur-[200px] absolute top-[-12rem] right-[-12rem] bg-primary h-96 w-96 rounded-full" />
       <div className="z-1 mt-12 relative">
