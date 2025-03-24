@@ -13,12 +13,14 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import CoachCard from "@/components/main/coach-card";
+import TopScroller from "@/registry/toTop";
 
 function Events() {
   return (
     <div className=" relative">
       <div className="max-md:px-main-md px-main">
         <Navbar />
+        <TopScroller/>
       </div>
       <div className="blur-[200px] absolute top-[-12rem] right-[-12rem] bg-primary h-96 w-96 rounded-full" />
       <div className="z-1 relative">

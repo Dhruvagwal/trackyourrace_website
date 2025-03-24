@@ -12,6 +12,7 @@ import {
 import Image from "next/image";
 import { ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import TopScroller from "@/registry/toTop";
 
 const invoices = [
   {
@@ -146,6 +147,7 @@ function AboutUs() {
   return (
     <div className="px-main relative max-md:px-main-md">
       <Navbar />
+      <TopScroller/>
       {/* orb */}
       <div className="blur-[200px] absolute top-[-12rem] right-[-12rem] bg-primary h-96 w-96 rounded-full" />
       <div className="relative mt-12  z-1">

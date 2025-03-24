@@ -2,11 +2,13 @@ import React from "react";
 import Navbar from "@/components/main/navbar";
 import { GYM_COACHES } from "..";
 import CoachCard from "@/components/main/coach-card";
+import TopScroller from "@/registry/toTop";
 
 function CoachesGroup() {
   return (
     <div className="px-main relative max-md:px-main-md">
       <Navbar />
+      <TopScroller/>
       {/* orb */}
       <div className="blur-[200px] absolute top-[-12rem] right-[-12rem] bg-primary h-96 w-96 rounded-full" />
       <div className="z-1 mt-12 relative">

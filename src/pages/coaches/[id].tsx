@@ -5,12 +5,14 @@ import { GYM_COACHES } from "..";
 import { Button } from "@/components/ui/button";
 import { Check, Instagram, Linkedin, Twitter } from "lucide-react";
 import { MarqueeDemo } from "@/components/main/review";
+import TopScroller from "@/registry/toTop";
 
 function Coaches() {
   const coach = GYM_COACHES[0];
   return (
     <div className="px-main relative max-md:px-main-md">
       <Navbar />
+      <TopScroller/>
       <div className="blur-[200px] absolute top-[-12rem] right-[-12rem] bg-primary h-96 w-96 rounded-full" />
       <div className="z-1 relative">
         <Image
