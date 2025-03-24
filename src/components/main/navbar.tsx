@@ -10,7 +10,7 @@ const navItems = [
   },
   {
     name: "Events",
-    link: "/events",
+    link: "/events-group/marathons",
   },
   {
     name: "Result & Stats",
@@ -18,7 +18,7 @@ const navItems = [
   },
   {
     name: "Coaches",
-    link: "/coaches",
+    link: "/coaches-group/marathons",
   },
   {
     name: "Training & Workout",
@@ -81,7 +81,7 @@ export default function Component() {
           </div>
         </SheetContent>
       </Sheet> */}
-      <Link href="#" className="mr-6 hidden lg:flex items-center" prefetch={false}>
+      <Link href="/" className="mr-6 hidden lg:flex items-center" prefetch={false}>
         <Image src="/logo.svg" width={70} height={70} alt="logo"/>
         <span className="text-3xl font-bold">Track Your Race</span>
       </Link>
