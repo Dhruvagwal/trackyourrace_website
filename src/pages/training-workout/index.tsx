@@ -59,7 +59,7 @@ const TrainingAndWorkout = () => {
                         <h1 className='font-medium text-5xl text-left flex-1'>
                             {"Trending Training Plans"}
                         </h1>
-                        <p className='font-normal text-base text-right flex-1'>
+                        <p className='font-normal text-base text-left flex-1'>
                             {"Created by experts for diverse events: 5K speed plans, OCR grip strength circuits, cycling power-building routines, and more."}
                         </p>
                     </div>
@@ -70,6 +70,17 @@ const TrainingAndWorkout = () => {
                                 <TrainingPlanCard data={data} key={index} />
                             ))
                         }
+                    </div>
+                </section>
+
+                <section className="space-y-8">
+                    <div className='flex w-full flex-row justify-between'>
+                        <h1 className='font-medium text-5xl text-left flex-2'>
+                            {"Video Tutorials & Guides"}
+                        </h1>
+                        <p className='font-normal text-base text-left flex-1'>
+                            {"Learn proper technique for obstacles, transitions, functional fitness movements, and more."}
+                        </p>
                     </div>
                 </section>
 
