@@ -4,9 +4,7 @@ import Navbar from "@/components/main/navbar";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
