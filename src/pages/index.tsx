@@ -146,7 +146,7 @@ export default function Home() {
           Find, Train, and Compete in Events Around the World
         </h1>
         <div className="mt-10 relative flex flex-col-reverse gap-4 text-white/80 w-full">
-          <div className="bg-secondary z-1 md:absolute top-0 right-0 max-md:w-full w-[45vw] p-9 rounded-xl md:rounded-4xl">
+          <div className="bg-secondary z-1 md:absolute top-0 right-0 max-md:w-full w-[44.5vw] p-6 rounded-xl md:rounded-4xl">
             <p className="text-2xl">
               From running races and triathlons to OCR, cycling, and functional
               fitness challenges, access everything you need to conquer your
