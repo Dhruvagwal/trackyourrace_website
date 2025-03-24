@@ -1,14 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-
-interface HeroSectionProps {
-    title: string;
-    description: string;
-    bgImage: string;
-    ctaFilledContent: string;
-    ctaOutlineContent: string;
-}
+import { HeroSectionProps } from '@/types';
 
 const HeroSection: React.FC<HeroSectionProps> = ({ title, description, bgImage, ctaFilledContent, ctaOutlineContent }) => {
     return (
