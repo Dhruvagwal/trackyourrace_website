@@ -3,7 +3,7 @@ import Navbar from "@/components/main/navbar";
 import Image from "next/image";
 import { GYM_COACHES } from "..";
 import { Button } from "@/components/ui/button";
-import { Check, Instagram, Linkedin, TicketCheck, Twitter } from "lucide-react";
+import { Check, Instagram, Linkedin, Twitter } from "lucide-react";
 import { MarqueeDemo } from "@/components/main/review";
 
 function Coaches() {

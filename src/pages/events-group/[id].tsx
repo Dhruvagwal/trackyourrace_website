@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "@/components/main/navbar";
-import { CarouselItem } from "@/components/ui/carousel";
 import { MARATHON } from "..";
 import EventCard from "@/components/main/event-card";
 

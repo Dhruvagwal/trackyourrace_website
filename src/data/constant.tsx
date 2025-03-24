@@ -1,4 +1,4 @@
-const texts = {
+export const texts = {
   "en-US": {
     home: {
       title: "Find, Train, and Compete in Events Around the World",

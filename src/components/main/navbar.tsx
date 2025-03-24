@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -37,7 +38,7 @@ const navItems = [
 export default function Component() {
   return (
     <header className="flex h-24 w-full shrink-0 items-center">
-      {/* <Sheet>
+      <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="lg:hidden">
             <MenuIcon className="h-6 w-6" />
@@ -46,8 +47,8 @@ export default function Component() {
         </SheetTrigger>
         <SheetContent side="left">
           <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-            <MountainIcon className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
+            <Image src="/logo.svg" width={70} height={70} alt="logo" />
+            <span className="sr-only">Track Your Race</span>
           </Link>
           <div className="grid gap-2 py-6">
             <Link
@@ -80,9 +81,13 @@ export default function Component() {
             </Link>
           </div>
         </SheetContent>
-      </Sheet> */}
-      <Link href="/" className="mr-6 hidden lg:flex items-center" prefetch={false}>
-        <Image src="/logo.svg" width={70} height={70} alt="logo"/>
+      </Sheet>
+      <Link
+        href="/"
+        className="mr-6 hidden lg:flex items-center"
+        prefetch={false}
+      >
+        <Image src="/logo.svg" width={70} height={70} alt="logo" />
         <span className="text-3xl font-bold">Track Your Race</span>
       </Link>
       <nav className="ml-auto hidden lg:flex gap-6">

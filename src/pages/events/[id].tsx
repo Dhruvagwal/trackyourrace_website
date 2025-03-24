@@ -66,7 +66,7 @@ function Events() {
                     pits, and more.
                   </p>
                   <p>
-                    4. Hyrox Stations: Sled push/pull, rowing, burpees, farmer's
+                    4. Hyrox Stations: Sled push/pull, rowing, burpees, farmer&apos;s
                     carry, and running.
                   </p>
                   <p>
@@ -97,7 +97,7 @@ function Events() {
                     2. Master grip strength—for obstacles that require climbing
                     or hanging.
                   </p>
-                  <p>3. Pace yourself—don't burn out too soon!</p>
+                  <p>3. Pace yourself—don&apos;t burn out too soon!</p>
                 </div>
               </div>
             </div>
@@ -159,8 +159,8 @@ function Events() {
                 <div className="p-4 text-white/80">
                   <p>1. Type: Long run, interval, cross-training, or rest.</p>
                   <p>
-                    2. Time/distance: E.g., "Run for 45 minutes at a moderate
-                    pace."
+                    2. Time/distance: E.g., &ldquo;Run for 45 minutes at a moderate
+                    pace.&ldquo;
                   </p>
                   <p>3. Video tutorials for warm-ups/cool-downs.</p>
                 </div>
