@@ -1,4 +1,4 @@
-interface CommunityGroup {
+export interface CommunityGroup {
     title: string;
     subtitle: string;
     description: string;
@@ -7,3 +7,8 @@ interface CommunityGroup {
     imgSrc:string;
     expansion?:string;
   }
+export interface TraningPlans {
+    title: string;
+    description: string;
+    imgSrc: string;
+}

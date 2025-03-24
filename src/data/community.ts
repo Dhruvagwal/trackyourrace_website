@@ -1,3 +1,5 @@
+import { CommunityGroup } from "@/types";
+
 export const communityGroups: CommunityGroup[] = [
     {
         title: "Running Club Community",
@@ -66,7 +68,7 @@ export const communityGroups: CommunityGroup[] = [
     },
     {
         title: "OCR Community",
-        expansion:"Obstacle Course Racing",
+        expansion: "Obstacle Course Racing",
         subtitle: "Grip strength. Agility. Mental toughness.",
         description:
             "Get expert tips on conquering obstacles, building grip strength, and developing endurance for OCR events like Spartan Race & Tough...",

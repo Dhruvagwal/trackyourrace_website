@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { communityGroups } from '@/data/community';
 import HeroSection from '@/components/main/hero';
+import { CommunityGroup } from '@/types';
 
 
 const OrbRight = () => (

@@ -21,14 +21,14 @@ const navItems = [
     name: "Coaches",
     link: "/coaches-group/marathons",
   },
-  // {
-  //   name: "Training & Workout",
-  //   link: "/training-workout",
-  // },
-  // {
-  //   name: "Communities",
-  //   link: "/communities",
-  // },
+  {
+    name: "Training & Workout",
+    link: "/training-workout",
+  },
+  {
+    name: "Communities",
+    link: "/communities",
+  },
   // {
   //   name: "About Us",
   //   link: "/about-us",
