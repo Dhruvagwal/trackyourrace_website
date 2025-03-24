@@ -37,7 +37,15 @@ const navItems = [
 
 export default function Component() {
   return (
-    <header className="flex h-24 w-full shrink-0 items-center">
+    <header className="flex z-50 justify-between relative h-24 w-full shrink-0 items-center">
+      <Link
+        href="/"
+        className="mr-6 flex items-center"
+        prefetch={false}
+      >
+        <Image src="/logo.svg" width={70} height={70} alt="logo" />
+        <span className="md:grid hidden text-3xl font-bold">Track Your Race</span>
+      </Link>
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="lg:hidden">
@@ -46,50 +54,21 @@ export default function Component() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left">
-          <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-            <Image src="/logo.svg" width={70} height={70} alt="logo" />
-            <span className="sr-only">Track Your Race</span>
-          </Link>
-          <div className="grid gap-2 py-6">
-            <Link
-              href="#"
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              prefetch={false}
-            >
-              Home
-            </Link>
-            <Link
-              href="#"
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              prefetch={false}
-            >
-              About
-            </Link>
-            <Link
-              href="#"
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              prefetch={false}
-            >
-              Services
-            </Link>
-            <Link
-              href="#"
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              prefetch={false}
-            >
-              Contact
-            </Link>
+          <div className="grid gap-2 p-6">
+            {navItems.map((item) => (
+              <Link
+                key={item.link}
+                href={item.link}
+                className="flex w-full items-center py-2 text-lg font-semibold"
+                prefetch={false}
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
         </SheetContent>
       </Sheet>
-      <Link
-        href="/"
-        className="mr-6 hidden lg:flex items-center"
-        prefetch={false}
-      >
-        <Image src="/logo.svg" width={70} height={70} alt="logo" />
-        <span className="text-3xl font-bold">Track Your Race</span>
-      </Link>
+
       <nav className="ml-auto hidden lg:flex gap-6">
         {navItems.map((item) => (
           <Link
